@@ -22,7 +22,7 @@ def login_with_id(request, user_id):
     return login_user(request, user)
 
 
-@hijack_decorator
+#@hijack_decorator
 @hijack_require_http_methods
 def login_with_email(request, email):
     user = get_object_or_404(get_user_model(), email=email)
