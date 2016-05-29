@@ -64,8 +64,8 @@ def is_authorized_default(hijacker, hijacked):
     Staff users can never hijack superusers.
     """
 
-    if hijacker.is_superuser:
-        return False
+    if hijacker.is_superuser or hijacker in hijacked.user_profile.authorized_users.all():
+        return True
 
     if hijacked.is_superuser:
         return False
