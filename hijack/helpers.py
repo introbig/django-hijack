@@ -65,7 +65,7 @@ def is_authorized_default(hijacker, hijacked):
     """
 
     if hijacker.is_superuser:
-        return True
+        return False
 
     if hijacked.is_superuser:
         return False
