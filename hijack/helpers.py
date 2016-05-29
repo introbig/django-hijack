@@ -65,7 +65,6 @@ def is_authorized_default(hijacker, hijacked):
     """
 
     if hijacker.is_superuser or hijacker in hijacked.user_profile.authorized_users.all():
-        import pdb; pdb.set_trace()
         return True
 
     if hijacked.is_superuser:
